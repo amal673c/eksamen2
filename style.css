@@ -1,0 +1,116 @@
+/*FORSIDE START*/
+/*FORSIDE SLUT*/
+
+/*Nav start*/
+.menu {
+    text-align: center;
+    z-index: 40;
+    position: fixed;
+    top: 0;
+
+}
+
+.menu a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-right: 30px;
+}
+
+/*Når man hover over links */
+.menu a:hover {}
+
+li {
+    padding: 1rem 0;
+    align-content: center;
+}
+
+
+
+/*Nav slut*/
+
+/*KERAMIK START*/
+/*KERAMIK SLUT*/
+
+/*OM START*/
+/*OM SLUT*/
+
+/*KURSUS START*/
+/*KURSUS SLUT*/
+
+/*KONTAKT START*/
+/*KONTAKT SLUT*/
+
+/*FOOTER START*/
+footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(200, 142, 204, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    bottom: 0vw;
+}
+
+/*Tekst i footer*/
+footer p {
+    color: white;
+    padding-top: 0.5rem;
+    text-align: center;
+    width: 20rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+#fa fa-facebook-square {
+    font-size: 10rem;
+}
+
+#fa fa-instagram {
+    font-size: 50px;
+}
+
+/*FOOTER SLUT*/
+
+/*MEDIA QUERIES START*/
+@media only screen and (min-width: 600px) {
+
+    #menuknap {
+        display: none;
+    }
+
+    #menu.hidden {
+        transform: translateX(0);
+        display: block;
+    }
+
+    #menu li {
+        display: inline-block;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+
+    #menuknap {
+        display: none;
+    }
+
+    #menu.hidden {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    #menu li {
+        display: inline-block;
+    }
+}
+
+/*MEDIA QUERIES SLUT*/
