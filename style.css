@@ -4,7 +4,6 @@
 /*Nav start*/
 .menu {
     z-index: 40;
-    position: fixed;
     text-align: center;
 }
 
@@ -40,11 +39,12 @@ li {
 
 /*FOOTER START*/
 footer {
+    display: flex;
+    flex-wrap: wrap;
     position: absolute;
     bottom: 0vw;
     background-color: rgba(200, 142, 204, 0.6);
-    display: flex;
-    flex-wrap: wrap;
+
     width: 100%;
     left: 0;
 }
