@@ -3,11 +3,9 @@
 
 /*Nav start*/
 .menu {
-    text-align: center;
     z-index: 40;
     position: fixed;
-    top: 0;
-
+    text-align: center;
 }
 
 .menu a {
@@ -15,7 +13,7 @@
     text-decoration: none;
     font-weight: 100;
     text-transform: uppercase;
-    margin-right: 30px;
+
 }
 
 /*Når man hover over links */
@@ -25,8 +23,6 @@ li {
     padding: 1rem 0;
     align-content: center;
 }
-
-
 
 /*Nav slut*/
 
@@ -45,15 +41,12 @@ li {
 /*FOOTER START*/
 footer {
     position: absolute;
-    bottom: 0;
-    text-align: center;
+    bottom: 0vw;
     background-color: rgba(200, 142, 204, 0.6);
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    width: 100vw;
-    bottom: 0vw;
+    width: 100%;
+    left: 0;
 }
 
 /*Tekst i footer*/
@@ -69,12 +62,14 @@ footer a {
     color: white;
 }
 
-#fa fa-facebook-square {
+i .fa fa-facebook-square {
     font-size: 10rem;
+    padding-top: 0.5rem;
 }
 
-#fa fa-instagram {
+i .fa fa-instagram {
     font-size: 50px;
+    padding-top: 0.5rem;
 }
 
 /*FOOTER SLUT*/
