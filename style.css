@@ -1,3 +1,15 @@
+/*OVERORDNET*/
+*,
+html * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
 /*FORSIDE START*/
 /*FORSIDE SLUT*/
 
@@ -41,10 +53,7 @@ li {
 footer {
     display: flex;
     flex-wrap: wrap;
-    position: absolute;
-    bottom: 0vw;
     background-color: rgba(200, 142, 204, 0.6);
-
     width: 100%;
     left: 0;
 }
@@ -53,26 +62,50 @@ footer {
 footer p {
     color: white;
     padding-top: 0.5rem;
-    text-align: center;
+    text-align: left;
     width: 20rem;
 }
 
 footer a {
     text-decoration: none;
     color: white;
+    padding: 1rem;
 }
 
-i .fa fa-facebook-square {
-    font-size: 10rem;
-    padding-top: 0.5rem;
+.ikoner {
+    margin: 0 0 0 10rem;
+    padding-top: 5.5rem;
 }
 
-i .fa fa-instagram {
-    font-size: 50px;
-    padding-top: 0.5rem;
+.fa-facebook-square:before {
+    font-size: 48px;
+}
+
+.fa-instagram:before {
+    font-size: 48px;
 }
 
 /*FOOTER SLUT*/
+
+/*BURGER MENU*/
+
+/*Når burger menuen er lukket skal den transforme således*/
+.hidden {
+    transform: translateX(-100%);
+    display: none;
+}
+
+/*Selve burger knappen*/
+#menuknap {
+    position: fixed;
+    left: 90%;
+    font-size: 2rem;
+    font-family: sans-serif;
+    color: grey;
+
+}
+
+/*BURGER SLUT*/
 
 /*MEDIA QUERIES START*/
 @media only screen and (min-width: 600px) {

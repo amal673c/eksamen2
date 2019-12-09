@@ -8,34 +8,79 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<nav></nav>
-<footer></footer>
 
 <body>
+    <nav></nav>
+    <article>
+        <h2></h2>
+        <img src="" alt="">
+        <p></p>
+
+    </article>
+
+    <main class="kontakt_side">
+        <section class="kontakt">
+            <h1></h1>
+            <section>
+            </section>
+        </section>
+    </main>
+
+    <footer></footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", start);
 
+        let indhold;
+        const dest = document.querySelector("#menu-container");
+
         function start() {
+            hentJson();
             loadMenu();
             loadFooter();
         }
 
+        async function hentJson() {
+            const url = "http://amalieravn.dk/kea/2-sem/eksamen/wordpress/wp-json/wp/v2/pages/5"
 
-        //    Henter menuen
+            let myJson = await fetch(url);
+            indhold = await myJson.json();
+            console.log(indhold);
+            visIndhold();
+        }
+
         async function loadMenu() {
+
             let data = await fetch("nav.html");
             let navigation = await data.text();
             console.log("loadMenu", navigation);
             opretMenu(navigation);
-        }
 
+        }
 
         function opretMenu(e) {
             document.querySelector("nav").innerHTML = e;
             document.querySelector("#menuknap").addEventListener("click", toggleMenu);
         }
 
-        //       Henter footeren
+        function visIndhold() {
+            document.querySelector("h1").textContent = indhold.title.rendered;
+            document.querySelector("section").innerHTML = indhold.content.rendered;
+        }
+
+
+        function toggleMenu() {
+            console.log("toggleMenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                document.querySelector("#menuknap").textContent = "☰";
+            } else {
+                document.querySelector("#menuknap").textContent = "X";
+            }
+        }
 
         async function loadFooter() {
             let data = await fetch("footer.html");

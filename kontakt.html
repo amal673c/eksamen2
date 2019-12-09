@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+  <body>
    <nav></nav>
     <article>
         <h2></h2>
@@ -22,9 +24,9 @@
             <section>
             </section>
         </section>
+    </main>
 
-
-<body>
+<footer></footer>
 
        <script>
         document.addEventListener("DOMContentLoaded", start);
@@ -66,19 +68,19 @@
             document.querySelector("section").innerHTML = indhold.content.rendered;
         }
 
-//
-//        function toggleMenu() {
-//            console.log("toggleMenu");
-//            document.querySelector("#menu").classList.toggle("hidden");
-//
-//            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
-//
-//            if (erSkjult == true) {
-//                document.querySelector("#menuknap").textContent = "☰";
-//            } else {
-//                document.querySelector("#menuknap").textContent = "X";
-//            }
-//        }
+
+        function toggleMenu() {
+            console.log("toggleMenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                document.querySelector("#menuknap").textContent = "☰";
+            } else {
+                document.querySelector("#menuknap").textContent = "X";
+            }
+        }
 
         async function loadFooter() {
             let data = await fetch("footer.html");
@@ -93,9 +95,6 @@
 
         }
     </script>
-
-
-
 
 </body>
 
