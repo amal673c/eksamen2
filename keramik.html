@@ -15,7 +15,9 @@
         <button data-keramik="alle" class="valgt">Alle</button>
         <button data-keramik="kop">kopper</button>
         <button data-keramik="vase">vaser</button>
-        <button data-keramik="Mountain Bike">Mælkekander</button>
+        <button data-keramik="vase">vaser</button>
+        <button data-keramik="vase">vaser</button>
+
     </nav>
 
     <template>
@@ -36,7 +38,10 @@
 
         let filter = "alle";
         let indhold;
+        let dest = document.querySelector("section");
         document.addEventListener("DOMContentLoaded", start);
+
+
 
 
         function start() {
@@ -45,10 +50,13 @@
             loadFooter();
 
             const filterKnapper = document.querySelectorAll("nav button");
-             filterKnapper.forEach(knap => knap.addEventListener("click", filtrerAlleData));
+
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerAlleData));
         }
 
-          function filtrerAlleData() {
+
+
+        function filtrerAlleData() {
              filter = this.dataset.keramik; //sæt variabel "filter" til aktuel værdi
              document.querySelector(".valgt").classList.remove("valgt"); //fjern klassen valgt fra aktuel knap
              this.classList.add("valgt");
@@ -83,52 +91,34 @@
         }
 
 
-        function visIndhold() {
-             //her tømmer vi array'et så filteringen ikke kommer oveni alle cyklerne.
 
+        function visIndhold() {
+             //her tømmer vi array'et så filteringen ikke kommer oveni i hinanden.
             dest.textContent = "";
-            indhold.forEach(keramik => {
-                console.log("keramik", keramik);
-                const klon = document.querySelector("template").cloneNode(true).content;
-                klon.querySelector("h2").textContent = keramik.titel;
-                klon.querySelector(".pris").textContent = keramik.pris;
-                klon.querySelector("p").innerHTML = keramik.beskrivelse;
-                klon.querySelector("img").src = keramik.billede.guid;
 
 
-                document.querySelector("section").appendChild(klon);
-            })
-        }
+             indhold.forEach(keramik => {
+                 if (filter == "alle" || keramik.kategori == filter) {
+                     console.log("kategori", keramik.kategori)
+                     const klon = document.querySelector("template").cloneNode(true).content;
+                     //fortæller vores content hvordan det skal fordeles i forhold til vores template
+                     klon.querySelector("h2").textContent = keramik.titel;
+                     klon.querySelector(".pris").textContent = keramik.pris;
+
+                     klon.querySelector("img").src = keramik.billede.guid;
+                     //fortæller hvilket indhold der skal være på vores side
+                     dest.appendChild(klon);
+                     dest.lastElementChild.addEventListener("click", () => {
+                         location.href = `detaljeside.html?id=${keramik.id}`;
+                         //siger til vores side, at den skal klikke ind på detaljesiden (link), når man trykker på et billede
+                     })
+                }
+
+         })
+
+    }
 
 
-
-        function visIndhold() {
-
-    indhold.forEach(keramik => {
-        if (filterValue == "alle" || keramik.kategorier == filterValue) {
-
-
-
-            const klon = document.querySelector("template").cloneNode(true).content;
-
-            //fortæller vores content hvordan det skal fordeles i forhold til vores template
-            klon.querySelector("h2").textContent = keramik.titel;
-            klon.querySelector(".pris").textContent = keramik.pris + " DKK";;
-
-            klon.querySelector("img").src = keramik.billede.guid;
-
-            //fortæller hvilket indhold der skal være på vores side
-
-            dest.appendChild(klon);
-            dest.lastElementChild.addEventListener("click", () => {
-                location.href = `detaljeside.html?id=${keramik.id}`;
-                //siger til vores side, at den skal klikke ind på detaljesiden (link), når man trykker på et billede
-            })
-
-        }
-    })
-
-}
 
         async function loadFooter() {
             let data = await fetch("footer.html");
