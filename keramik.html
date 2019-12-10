@@ -10,6 +10,14 @@
 
 <body>
     <nav></nav>
+
+    <nav class="menu2">
+        <button data-keramik="alle" class="valgt">Alle</button>
+        <button data-keramik="kop">kopper</button>
+        <button data-keramik="vase">vaser</button>
+        <button data-keramik="Mountain Bike">Mælkekander</button>
+    </nav>
+
     <template>
         <article>
             <h2></h2>
@@ -25,6 +33,8 @@
 
     <footer></footer>
     <script>
+
+        let filter = "alle";
         let indhold;
         document.addEventListener("DOMContentLoaded", start);
 
@@ -33,7 +43,19 @@
             hentJson();
             loadMenu();
             loadFooter();
+
+            const filterKnapper = document.querySelectorAll("nav button");
+             filterKnapper.forEach(knap => knap.addEventListener("click", filtrerAlleData));
         }
+
+          function filtrerAlleData() {
+             filter = this.dataset.keramik; //sæt variabel "filter" til aktuel værdi
+             document.querySelector(".valgt").classList.remove("valgt"); //fjern klassen valgt fra aktuel knap
+             this.classList.add("valgt");
+
+             visIndhold();
+
+         }
 
 
         async function hentJson() {
@@ -62,6 +84,9 @@
 
 
         function visIndhold() {
+             //her tømmer vi array'et så filteringen ikke kommer oveni alle cyklerne.
+
+            dest.textContent = "";
             indhold.forEach(keramik => {
                 console.log("keramik", keramik);
                 const klon = document.querySelector("template").cloneNode(true).content;
@@ -76,6 +101,35 @@
         }
 
 
+
+        function visIndhold() {
+
+    indhold.forEach(keramik => {
+        if (filterValue == "alle" || keramik.kategorier == filterValue) {
+
+
+
+            const klon = document.querySelector("template").cloneNode(true).content;
+
+            //fortæller vores content hvordan det skal fordeles i forhold til vores template
+            klon.querySelector("h2").textContent = keramik.titel;
+            klon.querySelector(".pris").textContent = keramik.pris + " DKK";;
+
+            klon.querySelector("img").src = keramik.billede.guid;
+
+            //fortæller hvilket indhold der skal være på vores side
+
+            dest.appendChild(klon);
+            dest.lastElementChild.addEventListener("click", () => {
+                location.href = `detaljeside.html?id=${keramik.id}`;
+                //siger til vores side, at den skal klikke ind på detaljesiden (link), når man trykker på et billede
+            })
+
+        }
+    })
+
+}
+
         async function loadFooter() {
             let data = await fetch("footer.html");
             let footer = await data.text();
@@ -88,6 +142,7 @@
             document.querySelector("footer").innerHTML = e;
 
         }
+
     </script>
 </body>
 
