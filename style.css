@@ -2,7 +2,6 @@
 *,
 html * {
     box-sizing: border-box;
-
 }
 
 img {
@@ -13,19 +12,37 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+}
 
+h1 {
+    font-family: 'GFS Didot', serif;
+    color: #9F9892;
+    font-weight: 540;
+    font-size: 3.5em;
+
+}
+
+h2 {
+    color: #9F9892;
+    font-weight: 540;
+    font-family: 'Roboto',
+        sans-serif;
+}
+
+p {
+    color: #676360;
+    font-weight: 100;
+    font-family: 'Montserrat',
+        sans-serif;
 }
 
 /*FORSIDE START*/
 /*FORSIDE SLUT*/
 
 /*Nav start*/
-.menu a {
-    font-size: 1.2rem;
-    text-decoration: none;
-    font-weight: 100;
-    text-transform: uppercase;
 
+header h1 {
+    text-align: center;
 }
 
 
@@ -65,8 +82,10 @@ li {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2.5rem;
+    /*
     padding: 0 8rem;
     padding-top: 0;
+*/
 }
 
 .keramik {
@@ -116,14 +135,23 @@ li {
     transform: scale(1.05);
 }
 
-.keramik_txt h1 {
-    text-align: center;
+
+
+
+.keramik_txt {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+
 }
 
-.keramik_txt p {
+.keramik_txt h1 {
     text-align: center;
-    max-width: 400px;
+
 }
+
+
 
 /*KERAMIK SLUT*/
 
@@ -168,6 +196,64 @@ li {
 /*SINGLEVIEW SLUT*/
 
 /*OM START*/
+/*OM START*/
+
+
+.om_overskrift h2 {
+    font-size: 3rem;
+    text-align: center;
+
+}
+
+/*SECTION / WRAPPER */
+.om {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+
+}
+
+/* Størrelser på billeder*/
+.wp-image-17 {
+    /*    max-width: 800px;*/
+    /*    max-height: 800px;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-image-18 {
+    /*    max-height: 455px;*/
+    margin-left: 10px;
+}
+
+.wp-image-19 {
+    /*
+    max-width: 500px;
+    max-height: 500px;
+*/
+}
+
+/*STYLING AF TEKST*/
+.om p {
+    line-height: 1.5;
+    font-weight: 230;
+    width: 450px;
+    margin-left: 55px;
+    display: block;
+
+}
+
+.om h2 {
+    margin-left: 65px;
+    font-size: 1.5rem;
+    font-weight: 460;
+}
+
+/*OM SLUT*/
 /*OM SLUT*/
 
 
@@ -336,12 +422,6 @@ footer a {
     }
 }
 
-/*MEDIA QUERIES SLUT*/
-
-
-
-
-
 @media only screen and (min-width: 600px) {
 
     .singleview_side {
@@ -359,3 +439,5 @@ footer a {
 
     singleview_img2 {}
 }
+
+/*MEDIA QUERIES SLUT*/
