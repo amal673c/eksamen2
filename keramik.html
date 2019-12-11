@@ -13,35 +13,35 @@
 
     <nav class="menu2">
         <button data-keramik="alle" class="valgt">Alle</button>
-        <button data-keramik="kop">kopper</button>
-        <button data-keramik="vase">vaser</button>
-        <button data-keramik="vase">vaser</button>
-        <button data-keramik="vase">vaser</button>
+        <button data-keramik="kop">Kopper</button>
+        <button data-keramik="vase">Vaser</button>
+        <button data-keramik="æggebæger">Æggebæger</button>
+        <button data-keramik="mælkekande">Mælkekander</button>
 
     </nav>
 
     <template>
-        <article>
+        <article class=keramik>
             <h2></h2>
             <img src="" alt="">
             <p></p>
             <p class="pris"></p>
         </article>
     </template>
+
     <h1></h1>
+
     <main>
-        <section></section>
+        <section class="indhold"></section>
     </main>
 
     <footer></footer>
-    <script>
 
+       <script>
         let filter = "alle";
         let indhold;
         let dest = document.querySelector("section");
         document.addEventListener("DOMContentLoaded", start);
-
-
 
 
         function start() {
@@ -57,13 +57,13 @@
 
 
         function filtrerAlleData() {
-             filter = this.dataset.keramik; //sæt variabel "filter" til aktuel værdi
-             document.querySelector(".valgt").classList.remove("valgt"); //fjern klassen valgt fra aktuel knap
-             this.classList.add("valgt");
+            filter = this.dataset.keramik; //sæt variabel "filter" til aktuel værdi
+            document.querySelector(".valgt").classList.remove("valgt"); //fjern klassen valgt fra aktuel knap
+            this.classList.add("valgt");
 
-             visIndhold();
+            visIndhold();
 
-         }
+        }
 
 
         async function hentJson() {
@@ -93,30 +93,30 @@
 
 
         function visIndhold() {
-             //her tømmer vi array'et så filteringen ikke kommer oveni i hinanden.
+            //her tømmer vi array'et så filteringen ikke kommer oveni i hinanden.
             dest.textContent = "";
 
 
-             indhold.forEach(keramik => {
-                 if (filter == "alle" || keramik.kategori == filter) {
-                     console.log("kategori", keramik.kategori)
-                     const klon = document.querySelector("template").cloneNode(true).content;
-                     //fortæller vores content hvordan det skal fordeles i forhold til vores template
-                     klon.querySelector("h2").textContent = keramik.titel;
-                     klon.querySelector(".pris").textContent = keramik.pris;
+            indhold.forEach(keramik => {
+                if (filter == "alle" || keramik.kategori == filter) {
+                    console.log("kategori", keramik.kategori)
+                    const klon = document.querySelector("template").cloneNode(true).content;
+                    //fortæller vores content hvordan det skal fordeles i forhold til vores template
+                    klon.querySelector("h2").textContent = keramik.titel;
+                    klon.querySelector(".pris").textContent = keramik.pris;
 
-                     klon.querySelector("img").src = keramik.billede.guid;
-                     //fortæller hvilket indhold der skal være på vores side
-                     dest.appendChild(klon);
-                     dest.lastElementChild.addEventListener("click", () => {
-                         location.href = `detaljeside.html?id=${keramik.id}`;
-                         //siger til vores side, at den skal klikke ind på detaljesiden (link), når man trykker på et billede
-                     })
+                    klon.querySelector("img").src = keramik.billede.guid;
+                    //fortæller hvilket indhold der skal være på vores side
+                    dest.appendChild(klon);
+                    dest.lastElementChild.addEventListener("click", () => {
+                        location.href = `singleview.html?id=${keramik.id}`;
+                        //siger til vores side, at den skal klikke ind på detaljesiden (link), når man trykker på et billede
+                    })
                 }
 
-         })
+            })
 
-    }
+        }
 
 
 
@@ -132,7 +132,6 @@
             document.querySelector("footer").innerHTML = e;
 
         }
-
     </script>
 </body>
 

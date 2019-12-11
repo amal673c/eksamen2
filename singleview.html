@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Rønnest Ceramics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav></nav>
+
+    <section>
+
+        <button class="luk">←</button>
+
+        <article class="singleview_side">
+
+            <div class="singleview_img">
+                <img class="my_image" src="" alt="">
+            </div>
+
+            <div class="singleview_indhold">
+                <h2></h2>
+                <p class="strrelse"></p>
+                <p class="materiale"></p>
+                <p class="pris"></p>
+                <p class="beskrivelse"></p>
+                <p class="tekst"></p>
+            </div>
+
+            <div class="singleview_img2">
+                <img class="my_image2" src="" alt="">
+                <img class="my_image3" src="" alt="">
+
+            </div>
+
+        </article>
+    </section>
+
+
+    <footer></footer>
+
+    <script>
+        let keramik;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get("id");
+
+        document.addEventListener("DOMContentLoaded", start);
+
+
+        //lad vores funktion keramik være
+
+        function start() {
+            hentJson();
+            loadMenu();
+            loadFooter();
+
+        }
+
+        document.querySelector(".luk").addEventListener("click", () => {
+            history.back();
+        })
+
+        //Det der gør at knappen kommer tilbage til den sidste side
+        async function hentJson() {
+            const url = "http://amalieravn.dk/kea/2-sem/eksamen/wordpress/wp-json/wp/v2/keramik/" + postId;
+
+            //devinerer vores URL, så vi ikke behøver skrive den helt ud
+
+            let myJson = await fetch(url);
+            //Det der gør at vi kan hente vores URL og den her kan hente indhold fra Json
+            keramik = await myJson.json();
+            console.log(myJson);
+            visIndhold();
+            //kalder på vores funktion: visIndhold
+        }
+
+        async function loadMenu() {
+
+            let data = await fetch("nav.html");
+            let navigation = await data.text();
+            opretMenu(navigation);
+
+        }
+
+        function opretMenu(e) {
+            document.querySelector("nav").innerHTML = e;
+            document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+        }
+
+
+        function visIndhold() {
+
+            document.querySelector("h2").textContent = keramik.titel;
+
+            document.querySelector(".strrelse").textContent = "Størrelse: " + keramik.vgt + " KG";
+            document.querySelector(".pris").textContent = "Pris: " + keramik.pris + " DKK";
+            document.querySelector(".materiale").textContent = "materiale: " + keramik.materiale + "";
+            document.querySelector(".tekst").innerHTML = keramik.beskrivelse;
+            document.querySelector(".beskrivelse").innerHTML = keramik.overskrift;
+            document.querySelector(".my_image").src = keramik.billede.guid;
+            document.querySelector(".my_image2").src = keramik.billede.guid;
+            document.querySelector(".my_image3").src = keramik.billede.guid;
+
+
+            console.log("keramik billede guid", keramik.billede.guid)
+
+        }
+
+        function toggleMenu() {
+            console.log("toggleMenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                document.querySelector("#menuknap").textContent = "☰";
+            } else {
+                document.querySelector("#menuknap").textContent = "X";
+            }
+        }
+
+        async function loadFooter() {
+            let data = await fetch("footer.html");
+            let footer = await data.text();
+            console.log("loadFooter", footer);
+            opretFooter(footer);
+        }
+
+        function opretFooter(e) {
+            document.querySelector("footer").innerHTML = e;
+
+        }
+
+    </script>
+</body>
+
+</html>

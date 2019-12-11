@@ -2,6 +2,11 @@
 *,
 html * {
     box-sizing: border-box;
+
+}
+
+img {
+    width: 100%;
 }
 
 body {
@@ -39,15 +44,163 @@ li {
 /*Nav slut*/
 
 /*KERAMIK START*/
+
+.indhold {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2.5rem;
+    padding: 0 8rem;
+    padding-top: 0;
+}
+
+.keramik {
+    cursor: pointer;
+    background-color: white;
+    padding: 1rem;
+    transition: 0.5s all;
+
+}
+
+.menu2 {
+    display: block;
+    text-align: center;
+    justify-content: space-between;
+    margin: 3rem 0 0;
+}
+
+/*Selve knappen*/
+.menu2 button {
+    font-size: 1rem;
+    /*Den indre afstand i boksen*/
+    padding: 10px;
+    /*Fjerner kanten på knapperne*/
+    font-family: sans-serif;
+    margin: 0 0.2rem;
+    cursor: pointer;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #9F9892;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+.menu2 button:hover {
+    border-bottom: 2px solid #676360;
+    border-bottom-width: thin;
+}
+
+.menu2 button.valgt {
+    border-bottom: 1px solid #676360;
+    outline: none;
+
+}
+
+.keramik:hover {
+    transform: scale(1.05);
+}
+
 /*KERAMIK SLUT*/
+
+/*SINGLEVIEW START*/
+.singleview_side {
+    width: 90vw;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.singleview_img {
+    box-sizing: border-box;
+    margin-top: 100px;
+    padding-left: 10vw;
+}
+
+.singleview_indhold {
+    display: block;
+    box-sizing: border-box;
+    margin-left: 5vw;
+    margin-top: 100px;
+}
+
+.singleview_img2 {
+    box-sizing: border-box;
+    display: block;
+    margin-left: 10vw;
+    margin-top: 20px;
+}
+
+.luk {
+    display: inline-block;
+    font-size: 3.4rem;
+    position: fixed;
+    margin-top: 60px;
+    font-weight: 200;
+    border: 0;
+    cursor: pointer;
+}
+
+/*SINGLEVIEW SLUT*/
 
 /*OM START*/
 /*OM SLUT*/
+
+
 
 /*KURSUS START*/
 /*KURSUS SLUT*/
 
 /*KONTAKT START*/
+.kontakt_overskrift h2 {
+    text-align: center;
+    font-size: 2.2em;
+}
+
+.kontakt_side {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+}
+
+.kontakt {
+    margin: 3vw;
+    margin-top: 0;
+    padding-left: 12vw;
+    flex-basis: 200px;
+    flex-grow: 1;
+}
+
+.kort {
+    margin: 7vw 7vw 7vw 0;
+    flex-basis: 300px;
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    border: 3px solid #9F9892;
+    padding: 10px;
+}
+
+textarea {
+    border: 3px solid #9F9892;
+}
+
+input.wpcf7-form-control.wpcf7-submit {
+    background-color: #9F9892;
+    padding: 4px 50px;
+    text-decoration-color: white;
+}
+
+input[value="Send"] {
+    color: white;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
 /*KONTAKT SLUT*/
 
 /*FOOTER START*/
@@ -145,3 +298,22 @@ footer a {
 }
 
 /*MEDIA QUERIES SLUT*/
+
+
+@media only screen and (min-width: 600px) {
+
+    .singleview_side {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        padding: 0 7vw;
+        margin: 0 auto;
+        padding-left: 0;
+    }
+
+    .singleview_tekst {
+        grid-column: 1/2;
+        padding: 0 30px;
+    }
+
+    singleview_img2 {}
+}
