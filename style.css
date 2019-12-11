@@ -20,11 +20,6 @@ body {
 /*FORSIDE SLUT*/
 
 /*Nav start*/
-.menu {
-    z-index: 40;
-    text-align: center;
-}
-
 .menu a {
     font-size: 1.2rem;
     text-decoration: none;
@@ -33,18 +28,39 @@ body {
 
 }
 
+
+.menu {
+    justify-content: space-between;
+    text-align: center;
+    z-index: 40;
+    top: 0;
+
+}
+
+.menu a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #9F9892;
+    font-weight: 350;
+    text-transform: uppercase;
+}
+
 /*Når man hover over links */
-.menu a:hover {}
+.menu a:hover {
+    font-weight: bold;
+}
+
+.menu a:selected {
+    font-weight: bold;
+}
 
 li {
     padding: 1rem 0;
-    align-content: center;
 }
 
 /*Nav slut*/
 
 /*KERAMIK START*/
-
 .indhold {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -58,7 +74,7 @@ li {
     background-color: white;
     padding: 1rem;
     transition: 0.5s all;
-
+    border: 2px solid #676360;
 }
 
 .menu2 {
@@ -98,6 +114,15 @@ li {
 
 .keramik:hover {
     transform: scale(1.05);
+}
+
+.keramik_txt h1 {
+    text-align: center;
+}
+
+.keramik_txt p {
+    text-align: center;
+    max-width: 400px;
 }
 
 /*KERAMIK SLUT*/
@@ -166,32 +191,42 @@ li {
 .kontakt {
     margin: 3vw;
     margin-top: 0;
-    padding-left: 12vw;
+    padding-left: 15vw;
     flex-basis: 200px;
     flex-grow: 1;
+
 }
 
 .kort {
     margin: 7vw 7vw 7vw 0;
     flex-basis: 300px;
     flex-grow: 1;
+    overflow: hidden;
     position: relative;
     width: 100%;
     height: 100%;
+    margin-left: 7vw;
 }
 
 input {
     border: 3px solid #9F9892;
-    padding: 10px;
+    padding: 10px 20px;
+    width: 405px;
 }
 
 textarea {
     border: 3px solid #9F9892;
+    padding: 10px 20px;
+    width: 405px;
+}
+
+.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
+    width: 200px;
 }
 
 input.wpcf7-form-control.wpcf7-submit {
     background-color: #9F9892;
-    padding: 4px 50px;
+    padding: 4px 105px;
     text-decoration-color: white;
 }
 
@@ -295,9 +330,16 @@ footer a {
     #menu li {
         display: inline-block;
     }
+
+    .kort {
+        margin: 0 15vw 0 5vw;
+    }
 }
 
 /*MEDIA QUERIES SLUT*/
+
+
+
 
 
 @media only screen and (min-width: 600px) {
