@@ -515,7 +515,14 @@ footer a {
 }
 
 .image {
-    -webkit-transition: all .8s ease-in-out;
+    opacity: 1;
+    transition: .8s ease;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    background-color: white;
 }
 
 .middle {
@@ -527,10 +534,10 @@ footer a {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
+
 }
 
 .container:hover .image {
-
     opacity: 0.3;
 
 }
@@ -541,7 +548,7 @@ footer a {
 
 .text {
     font-family: sans-serif;
-    font-size: 3rem;
+    font-size: 1.5rem;
     background-color: #676360;
     color: white;
     padding: 16px 32px;
