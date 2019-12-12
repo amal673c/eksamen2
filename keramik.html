@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Line Rønnest Ceramics</title>
     <link rel="stylesheet" href="style.css">
-     <link href="https://fonts.googleapis.com/css?family=GFS+Didot|Montserrat|Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=GFS+Didot|Montserrat|Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav></nav>
+    <header>
+        <h1>LINE RØNNEST</h1>
+        <nav></nav>
+    </header>
 
     <div class="keramik_txt">
-        <h1>KERAMIK</h1>
+        <h2>KERAMIK</h2>
         <p>Line Rønnest Ceramics er håndstøbt Keramik i enkelt design. Alle værkerne er fremstillet i 100% porcelæn, som bliver lavet af Line Rønnest i hendes butik og værksted på Frederiksberg. </p>
     </div>
     <nav class="menu2">
@@ -25,14 +28,23 @@
 
     </nav>
 
-    <template>
-        <article class=keramik>
-            <h2></h2>
-            <img src="" alt="">
-            <p></p>
-            <p class="pris"></p>
-        </article>
-    </template>
+    <div class="mother">
+        <template>
+            <div class="container">
+                <article class=keramik>
+                    <h2></h2>
+                    <img src="image" alt="">
+                    <div class="middle">
+                        <div class="text">SHOP</div>
+                    </div>
+
+                    <p></p>
+                    <p class="pris"></p>
+                </article>
+            </div>
+        </template>
+
+    </div>
 
     <h1></h1>
 
@@ -123,6 +135,19 @@
 
         }
 
+        function toggleMenu() {
+            console.log("toggleMenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+            if (erSkjult == true) {
+                document.querySelector("#menuknap").textContent = "☰";
+            } else {
+                document.querySelector("#menuknap").textContent = "X";
+            }
+        }
+
 
 
         async function loadFooter() {
@@ -137,7 +162,6 @@
             document.querySelector("footer").innerHTML = e;
 
         }
-
     </script>
 </body>
 

@@ -12,20 +12,34 @@
 
 <body>
     <nav></nav>
+    <h2 class="om_overskrift">OM LINE</h2>
+    <section id="om_container">
 
-    <article class="om_overskrift">
-        <h2></h2>
-        <img src="" alt="">
-        <p></p>
+        <div class="om_billed1">
+            <img src="billeder/line.png" alt="line">
+            <div class="vision_tekst">
+                <h3>VISION</h3>
+                <p>Efter at have delt værksted med en gruppe andre i nogle år, besluttede Line sig for at åbne egen butik, som hun nu har haft i 8 år.</p>
 
-    </article>
+                <p>Line Rønnest står selv i butikken, og laver selv alt sin Keramik.</p>
+                <p>Butikken på Frederiksberg emmer en atmosfære af æstetik og kvalitet, hvilket skyldes Line Rønnest enkle, men elegante keramik produkter. Hun beskriver selv sit design som tidsløst, men med en forståelse af tidens farve tendenser. Inspirationen til farverne og værkerne kommer fra hendes omgivelser, ofte i form af mad, men også gåture i Frederiksberg Have med sin hund. Hun ønsker at skabe keramik, som passer ind i hvilket som helst køkken, og som er nemt og funktionelt. </p>
+                <p>Selve farverne og keramikken håndstøber hun selv nede i butikken, hvor man kan se et stor udvalg af hendes produkter. Hun laver også produkter på bestilling, hvis det er hvad man ønsker. </p>
+            </div>
+        </div>
+        <div class="om_bio">
+            <h3>BIO</h3>
+            <p>Line Rønnest er færdiguddannet fra den Danske Design skole. Line har altid haft et passion for det kreative, og elsket at udfolde sig kreativt i form af at tegne og forme.</p>
 
-    <!--   MAIN CLASS = WRAPPER -->
-    <main class="om_side">
-        <section class="om">
-            <h1></h1>
-        </section>
-    </main>
+            <p>Det var et højskoleophold, som endte med at blive skelsættende for lines vej til keramikken. Hun blev fascineret af de mange muligheder keramik giver, inden for at forme ting tredimensionelt. </p>
+            <img src="billeder/butik.png" alt="butik">
+            <img src="billeder/line_v%C3%A6rksted.png" alt="vaerksted">
+
+        </div>
+
+
+    </section>
+
+
 
     <footer></footer>
 
@@ -33,22 +47,13 @@
         document.addEventListener("DOMContentLoaded", start);
 
         let indhold;
-        const dest = document.querySelector("#menu-container");
 
         function start() {
-            hentJson();
+
             loadMenu();
             loadFooter();
         }
 
-        async function hentJson() {
-            const url = "http://amalieravn.dk/kea/2-sem/eksamen/wordpress/wp-json/wp/v2/pages/5"
-
-            let myJson = await fetch(url);
-            indhold = await myJson.json();
-            console.log(indhold);
-            visIndhold();
-        }
 
         async function loadMenu() {
 
@@ -63,13 +68,6 @@
             document.querySelector("nav").innerHTML = e;
             document.querySelector("#menuknap").addEventListener("click", toggleMenu);
         }
-
-        function visIndhold() {
-            document.querySelector("h1").textContent = indhold.title.rendered;
-            document.querySelector("h2").textContent = indhold.title.rendered;
-            document.querySelector("section").innerHTML = indhold.content.rendered;
-        }
-
 
         function toggleMenu() {
             console.log("toggleMenu");
@@ -98,4 +96,6 @@
         }
     </script>
 
-</body></html>
+</body>
+
+</html>
