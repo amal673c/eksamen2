@@ -11,47 +11,71 @@
 </head>
 
 <body>
-    <header>
-        <h1>LINE RØNNEST</h1>
+    <!--
+    <header class="forside_header">
+        <a href="index.html">
+            <h1>LINE RØNNEST</h1>
+        </a>
         <nav></nav>
     </header>
+-->
 
-    <article>
-        <h2></h2>
-        <img src="" alt="">
-        <p></p>
+    <section id="forside_container">
+        <div class="forside_txt">
+            <header class="forside_header">
+                <a href="index.html">
+                    <h1>LINE RØNNEST</h1>
+                </a>
+                <nav class="forside_nav"></nav>
+            </header>
+            <div class="parallax1"></div>
+            <h2>KOM NED I VORES BUTIK PÅ SMALLEGADE 28 OG BLIV INSPIRERET</h2>
+            <a href="kontakt.html">
+                <button class="button">FIND OS HER</button>
+            </a>
+        </div>
 
-    </article>
+        <div class="forside_box1">
+            <h3>SE ET UDVALG AF VORES PRODUKTER</h3>
+            <div class="forside_grid1">
+                <img src="billeder/line.png" alt="">
+                <img src="billeder/butik.png" alt="">
+                <img src="billeder/butik.png" alt="">
+            </div>
+            <a href="keramik.html">
+                <button class="button">KERAMIK</button>
+            </a>
+        </div>
+        <div class="parallax2"></div>
+        <div class="forside_box2">
+            <h3>KOM PÅ KERAMIKKURSUS HOS LINE</h3>
+            <div class="forside_grid2">
+                <img src="billeder/butik.png" alt="">
+                <img src="billeder/butik.png" alt="">
+                <img src="billeder/butik.png" alt="">
+            </div>
+            <a href="kursus.html">
+                <button class="button">BOOK NU</button>
+            </a>
+        </div>
+        <div class="parallax3"></div>
 
-    <main class="kontakt_side">
-        <section class="kontakt">
-
-            <section>
-            </section>
-        </section>
-    </main>
+    </section>
 
     <footer></footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", start);
-        let indhold;
-        const dest = document.querySelector("#menu-container");
+
+
 
         function start() {
-            hentJson();
+
             loadMenu();
             loadFooter();
         }
 
-        async function hentJson() {
-            const url = "http://amalieravn.dk/kea/2-sem/eksamen/wordpress/wp-json/wp/v2/pages/7"
 
-            let myJson = await fetch(url);
-            indhold = await myJson.json();
-            console.log(indhold);
-            visIndhold();
-        }
 
         async function loadMenu() {
 
@@ -67,10 +91,7 @@
             document.querySelector("#menuknap").addEventListener("click", toggleMenu);
         }
 
-        function visIndhold() {
-            //          document.querySelector("h1").textContent = indhold.title.rendered;
-            document.querySelector("section").innerHTML = indhold.content.rendered;
-        }
+
 
 
         function toggleMenu() {

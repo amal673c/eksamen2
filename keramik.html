@@ -10,8 +10,11 @@
 </head>
 
 <body>
+
     <header>
-        <h1>LINE RØNNEST</h1>
+        <a href="index.html">
+            <h1>LINE RØNNEST</h1>
+        </a>
         <nav></nav>
     </header>
 
@@ -19,6 +22,7 @@
         <h2>KERAMIK</h2>
         <p>Line Rønnest Ceramics er håndstøbt Keramik i enkelt design. Alle værkerne er fremstillet i 100% porcelæn, som bliver lavet af Line Rønnest i hendes butik og værksted på Frederiksberg. </p>
     </div>
+
     <nav class="menu2">
         <button data-keramik="alle" class="valgt">Alle</button>
         <button data-keramik="kop">Kopper</button>
@@ -32,14 +36,12 @@
         <template>
             <div class="container">
                 <article class=keramik>
-                    <h2></h2>
                     <img src="" class="image" alt="">
                     <div class="middle">
                         <div class="text">SHOP</div>
                     </div>
 
-                    <p></p>
-                    <p class="pris"></p>
+
                 </article>
             </div>
         </template>
@@ -119,8 +121,8 @@
                     console.log("kategori", keramik.kategori)
                     const klon = document.querySelector("template").cloneNode(true).content;
                     //fortæller vores content hvordan det skal fordeles i forhold til vores template
-                    klon.querySelector("h2").textContent = keramik.titel;
-                    klon.querySelector(".pris").textContent = keramik.pris;
+                    //                   klon.querySelector("h2").textContent = keramik.titel;
+                    // klon.querySelector(".pris").textContent = keramik.pris;
 
                     klon.querySelector("img").src = keramik.billede.guid;
                     //fortæller hvilket indhold der skal være på vores side
@@ -162,6 +164,7 @@
             document.querySelector("footer").innerHTML = e;
 
         }
+
     </script>
 </body>
 
