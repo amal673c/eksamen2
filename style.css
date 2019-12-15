@@ -37,7 +37,6 @@ h3 {
     font-family: 'Roboto',
         sans-serif;
     font-size: 2rem;
-
 }
 
 p {
@@ -50,22 +49,61 @@ p {
 
 /*FORSIDE START*/
 
-#forside_container {}
-
 .parallax1 {
     background-image: url(billeder/splash-3.png);
-    height: 50vw;
+    height: 40vw;
     width: 100%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     top: 0vw;
+    position: relative;
+    text-align: center;
+}
+
+
+.forside_container {
+    position: absolute;
+    margin: 20px;
+    width: auto;
+    z-index: 40;
+}
+
+.forside_nav a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 350;
+    text-transform: uppercase;
+}
+
+.forside_header {
+    text-align: center;
+}
+
+
+
+.forside_header a {
+    text-decoration: none;
+
+}
+
+.parallax1 h2 {
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    margin: auto;
+    padding-top: 18vw;
+    padding-bottom: 2vw;
+
 }
 
 .parallax2 {
     background-image: url(billeder/splash-1.png);
-    height: 50vw;
+    height: 40vw;
     width: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -76,7 +114,7 @@ p {
 
 .parallax3 {
     background-image: url(billeder/splash-2.png);
-    height: 50vw;
+    height: 40vw;
     width: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -92,14 +130,13 @@ p {
 
 .forside_header h1 {
     position: absolute;
-    left: 50%;
-    text-align: center;
-    transform: translate(-50%, -50%);
     color: white;
+    margin-top: 0;
+    align-content: center;
+
 }
 
 .forside_nav a {
-    position: absolute;
     top: 50%;
     display: block;
     justify-content: space-between;
@@ -110,39 +147,19 @@ p {
 
 }
 
-.forside_txt {
-    position: relative;
-    text-align: center;
-}
-
-.forside_txt h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2em;
-}
-
-.forside_txt button {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    text-align: center;
-    transform: translate(-50%, -50%);
-}
-
 .forside_box1 {
-    background-color: mistyrose;
+    background-color: white;
     width: 100%;
     height: 100%;
+    text-align: center;
+    margin: 5vw 0 5vw 0;
 }
 
-#forside_container img {
+#forside_section img {
     padding: 30px;
 }
 
-#forside_container h3 {
+#forside_section h3 {
     text-align: center;
 }
 
@@ -153,13 +170,7 @@ p {
     margin: 0vw 15vw;
 }
 
-.forside_txt {
-    text-align: center;
-}
 
-.forside_box1 {
-    text-align: center;
-}
 
 .forside_box2 {
     text-align: center;
@@ -169,6 +180,7 @@ p {
     background-color: white;
     width: 100%;
     height: 100%;
+    margin: 5vw 0 5vw 0;
 }
 
 .forside_grid2 {
@@ -178,6 +190,9 @@ p {
     margin: 0vw 15vw;
 }
 
+
+
+/*STYLING AF KNAPPER PÅ FORSIDE*/
 .button {
     background-color: #9F9892;
     border: none;
@@ -193,7 +208,6 @@ p {
         sans-serif;
     margin: 0 auto;
     text-align: center;
-
 }
 
 .button:hover {
@@ -202,30 +216,27 @@ p {
     color: #9F9892;
 }
 
-
-
-
-
-
-
 /*FORSIDE SLUT*/
 
-/*Nav start*/
-header {
+/*NAV START*/
+
+.menu1 header {
     border-bottom: 1.5px solid #ACA9A7;
 }
 
-.menu {
+.menu1 {
     display: block;
     justify-content: space-between;
     text-align: center;
     margin: 3rem 0 0;
     z-index: 40;
     top: 0;
-
 }
 
-header h1 {}
+.menu1 ul {
+    background: none;
+    border: none;
+}
 
 
 
@@ -239,11 +250,8 @@ li {
     top: 0;
 }
 
-header h1 {
-    text-align: center;
-}
 
-.menu a {
+.menu1 a {
     font-size: 1.2rem;
     text-decoration: none;
     color: #9F9892;
@@ -252,11 +260,15 @@ header h1 {
 }
 
 /*Når man hover over links */
-.menu a:hover {
+.menu1 a:hover {
     font-weight: bold;
 }
 
+
 /*NAV SLUT*/
+
+
+
 
 /*KERAMIK START*/
 .menu2 {
@@ -326,7 +338,7 @@ header h1 {
 
 }
 
-/*hover med text fra w3*/
+/*hover med text med hjælp fra w3*/
 .mother {
     margin-top: 50px;
 }
@@ -377,8 +389,8 @@ header h1 {
     padding: 10px 40px 10px 40px;
 }
 
-
 /*KERAMIK SLUT*/
+
 
 /*SINGLEVIEW START*/
 .singleview_side {

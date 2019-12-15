@@ -8,51 +8,65 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=GFS+Didot|Montserrat|Roboto&display=swap" rel="stylesheet">
+    <meta name="robots" content="noindex">
 </head>
 
 <body>
-    <!--
-    <header class="forside_header">
-        <a href="index.html">
-            <h1>LINE RØNNEST</h1>
-        </a>
-        <nav></nav>
-    </header>
--->
+    <section id="forside_section">
 
-    <section id="forside_container">
-        <div class="forside_txt">
-            <header class="forside_header">
-                <a href="index.html">
-                    <h1>LINE RØNNEST</h1>
-                </a>
-                <nav class="forside_nav"></nav>
-            </header>
-            <div class="parallax1"></div>
+        <div class="parallax1">
+
+            <div class="forside_container">
+                <header class="forside_header">
+                    <a href="index.html">
+                        <h1>LINE RØNNEST</h1>
+                    </a>
+                    <div class="forside_nav">
+                        <nav></nav>
+                    </div>
+                </header>
+            </div>
+
             <h2>KOM NED I VORES BUTIK PÅ SMALLEGADE 28 OG BLIV INSPIRERET</h2>
             <a href="kontakt.html">
                 <button class="button">FIND OS HER</button>
             </a>
         </div>
 
+
+
         <div class="forside_box1">
             <h3>SE ET UDVALG AF VORES PRODUKTER</h3>
             <div class="forside_grid1">
-                <img src="billeder/line.png" alt="">
-                <img src="billeder/butik.png" alt="">
-                <img src="billeder/butik.png" alt="">
+                <a href="keramik.html">
+                    <img src="billeder/line.png" alt="">
+                </a>
+                <a href="keramik.html">
+                    <img src="billeder/line.png" alt="">
+                </a>
+                <a href="keramik.html">
+                    <img src="billeder/line.png" alt="">
+                </a>
             </div>
             <a href="keramik.html">
                 <button class="button">KERAMIK</button>
             </a>
         </div>
         <div class="parallax2"></div>
+
+
         <div class="forside_box2">
             <h3>KOM PÅ KERAMIKKURSUS HOS LINE</h3>
             <div class="forside_grid2">
-                <img src="billeder/butik.png" alt="">
-                <img src="billeder/butik.png" alt="">
-                <img src="billeder/butik.png" alt="">
+                <a href="kursus.html">
+                    <img src="billeder/butik.png" alt="">
+                </a>
+                <a href="kursus.html">
+                    <img src="billeder/butik.png" alt="">
+                </a>
+                <a href="kursus.html">
+                    <img src="billeder/butik.png" alt="">
+                </a>
             </div>
             <a href="kursus.html">
                 <button class="button">BOOK NU</button>
@@ -67,23 +81,16 @@
     <script>
         document.addEventListener("DOMContentLoaded", start);
 
-
-
         function start() {
-
             loadMenu();
             loadFooter();
         }
 
-
-
         async function loadMenu() {
-
             let data = await fetch("nav.html");
             let navigation = await data.text();
             console.log("loadMenu", navigation);
             opretMenu(navigation);
-
         }
 
         function opretMenu(e) {
