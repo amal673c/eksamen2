@@ -57,6 +57,8 @@ p {
     font-weight: 100;
     font-family: 'Montserrat',
         sans-serif;
+
+
 }
 
 a {
@@ -71,6 +73,14 @@ a {
 
 /*FORSIDE START*/
 
+#forside_section img {
+    padding: 30px;
+}
+
+#forside_section h3 {
+    text-align: center;
+}
+
 .parallax1 {
     background-image: url(billeder/splash-3.png);
     height: 40vw;
@@ -82,51 +92,6 @@ a {
     top: 0vw;
     position: relative;
     text-align: center;
-}
-
-
-.forside_container {
-    width: auto;
-    z-index: 40;
-}
-
-
-
-
-/*
-.forside_nav a {
-    top: 50%;
-    display: block;
-    justify-content: space-between;
-    text-align: center;
-    margin: 3rem 0 0;
-    z-index: 40;
-    top: 0;
-
-}*/
-
-.forside_header {
-    /*    text-align: center;*/
-    /*    align-content: center;*/
-    justify-content: center;
-    border-bottom: none;
-}
-
-
-
-.forside_header a {
-    text-decoration: none;
-
-}
-
-.parallax1 h2 {
-    text-align: center;
-    color: white;
-    font-size: 1.5em;
-    margin: 6vw 0 0;
-
-    padding-bottom: 2vw;
-
 }
 
 .parallax2 {
@@ -151,13 +116,36 @@ a {
     top: 0vw;
 }
 
+.forside_container {
+    width: auto;
+    z-index: 40;
+}
+
 .forside_header {
+    justify-content: center;
+    border-bottom: none;
     overflow: hidden;
+}
+
+
+.forside_header a {
+    text-decoration: none;
+
 }
 
 .forside_header h1 {
     margin: 0 auto;
     color: white;
+    font-size: 5vw;
+}
+
+.parallax1 h2 {
+    text-align: center;
+    color: white;
+    font-size: 1.5vw;
+    margin: 15vw 0 0;
+    padding-bottom: 2vw;
+
 }
 
 .forside_box1 {
@@ -165,19 +153,8 @@ a {
     width: 100%;
     height: 100%;
     text-align: center;
-    margin: 5vw 0 5vw 0;
+    margin: 2vw 0 2vw 0;
 }
-
-#forside_section img {
-    padding: 30px;
-}
-
-#forside_section h3 {
-    text-align: center;
-}
-
-
-
 
 .forside_grid1 {
     display: grid;
@@ -185,30 +162,6 @@ a {
     grid-row-gap: 1em;
     margin: 0vw 15vw;
 }
-
-
-
-
-
-.forside_box2 {
-    text-align: center;
-}
-
-.forside_box2 {
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    margin: 5vw 0 5vw 0;
-}
-
-.forside_grid2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-row-gap: 1em;
-    margin: 0vw 15vw;
-}
-
-
 
 /*STYLING AF KNAPPER PÅ FORSIDE*/
 .button {
@@ -237,7 +190,6 @@ a {
 /*FORSIDE SLUT*/
 
 /*NAV START*/
-
 header {
     border-bottom: 1.5px solid #ACA9A7;
 }
@@ -246,25 +198,21 @@ header {
     display: block;
     justify-content: space-between;
     text-align: center;
-    /*    margin: 3rem 0 0;*/
     z-index: 40;
     top: 0;
 }
 
 .menu ul {
     padding: 0;
+    background-color: white;
+    height: 150vw;
+    top: 0;
 }
 
 
-li {
-    /*
-    margin-right: 60px;
-    padding: 1rem 0;
-*/
-}
+li {}
 
 .menu li {
-    /*    margin-right: 30px;*/
     top: 0;
     list-style-type: none;
 }
@@ -285,7 +233,6 @@ li {
 }
 
 /*NAV SLUT*/
-
 
 /*KERAMIK START*/
 .menu2 {
@@ -678,8 +625,9 @@ footer a {
 
 /*Når burger menuen er lukket skal den transforme således*/
 .hidden {
-    transform: translateX(-100%);
     display: none;
+    /*    transform: translateX(-100%);*/
+
 }
 
 /*Selve burger knappen*/
@@ -693,6 +641,10 @@ footer a {
     top: 0;
 }
 
+.forside_nav #menuknap {
+    color: white;
+}
+
 /*BURGER SLUT*/
 
 /*MEDIA QUERIES START*/
@@ -703,14 +655,20 @@ footer a {
     }
 
     #menu.hidden {
-        transform: translateX(0);
+        /*        transform: translateX(0);*/
         display: block;
         /*        height: 150px;*/
         opacity: 1;
+
     }
 
     #menu li {
         display: inline-block;
+    }
+
+    ul {
+        background-color: aqua;
+        height: 150px;
     }
 
     .kort {
@@ -722,8 +680,6 @@ footer a {
 @media only screen and (min-width: 600px) {
 
     .singleview_side {
-
-
         display: grid;
         grid-template-columns: 2fr 1fr;
         padding: 0 7vw;
@@ -761,7 +717,6 @@ footer a {
         width: 100%;
         height: 100%;
         object-fit: cover;
-
     }
 
 
@@ -803,14 +758,6 @@ footer a {
 }
 
 
-/*
-@media only screen and (max-width: 1200px) {
 
-    .parallax1,
-    parallax2,
-    parallax3 {
-        background-attachment: scroll;
-    }
-}*/
 
 /*MEDIA QUERIES SLUT*/
