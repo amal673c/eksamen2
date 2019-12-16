@@ -74,7 +74,7 @@ a {
 /*FORSIDE START*/
 
 #forside_section img {
-    padding: 30px;
+    /*    padding: 30px;*/
 }
 
 #forside_section h3 {
@@ -154,13 +154,32 @@ a {
     height: 100%;
     text-align: center;
     margin: 2vw 0 2vw 0;
+
 }
+
+.forside_box1 img {}
 
 .forside_grid1 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-row-gap: 1em;
     margin: 0vw 15vw;
+
+}
+
+.forside_grid1 img {
+    padding: 30px;
+}
+
+.forside_grid2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-row-gap: 1em;
+    margin: 0vw 15vw;
+}
+
+.instagram {
+    padding: 10px;
 }
 
 /*STYLING AF KNAPPER PÅ FORSIDE*/
@@ -204,8 +223,8 @@ header {
 
 .menu ul {
     padding: 0;
-    background-color: white;
-    height: 150vw;
+    /*    background-color: white;*/
+    /*    height: 150vw;*/
     top: 0;
 }
 
@@ -667,8 +686,8 @@ footer a {
     }
 
     ul {
-        background-color: aqua;
-        height: 150px;
+
+        /*        height: 150px;*/
     }
 
     .kort {
