@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Line Rønnest Ceramics</title>
     <link rel="stylesheet" href="style.css">
-     <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex">
 </head>
 
 <body>
@@ -29,10 +29,11 @@
 
             <div class="singleview_indhold">
                 <h2></h2>
-                <p class="strrelse"></p>
+                <p class="farve"></p>
+                <p class="ml"></p>
                 <p class="materiale"></p>
                 <p class="pris"></p>
-                <p class="beskrivelse"></p>
+                <!--                <p class="beskrivelse"></p>-->
                 <p class="tekst"></p>
             </div>
         </article>
@@ -98,12 +99,13 @@
         function visIndhold() {
 
             document.querySelector("h2").textContent = keramik.titel;
+            document.querySelector(".farve").textContent = " Farve: " + keramik.farve;
 
-            document.querySelector(".strrelse").textContent = "Størrelse: " + keramik.vgt + " KG";
+            document.querySelector(".ml").textContent = "Mål: " + keramik.ml + " ";
             document.querySelector(".pris").textContent = "Pris: " + keramik.pris + " DKK";
-            document.querySelector(".materiale").textContent = "materiale: " + keramik.materiale + "";
+            document.querySelector(".materiale").textContent = "Materiale: " + keramik.materiale + "";
             document.querySelector(".tekst").innerHTML = keramik.beskrivelse;
-            document.querySelector(".beskrivelse").innerHTML = keramik.overskrift;
+            //          document.querySelector(".beskrivelse").innerHTML = keramik.overskrift;
             document.querySelector(".my_image").src = keramik.billede.guid;
             document.querySelector(".my_image2").src = keramik.billede.guid;
             document.querySelector(".my_image3").src = keramik.billede.guid;

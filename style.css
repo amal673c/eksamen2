@@ -2,6 +2,7 @@
 *,
 html * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 img {
@@ -20,6 +21,8 @@ h1 {
     color: #9F9892;
     font-weight: 540;
     font-size: 3.5em;
+    text-align: center;
+    margin: 0 auto;
 
 }
 
@@ -83,24 +86,30 @@ a {
 
 
 .forside_container {
-    position: absolute;
-    margin: 20px;
     width: auto;
     z-index: 40;
 }
 
+
+
+
+/*
 .forside_nav a {
-    color: white;
+    top: 50%;
+    display: block;
+    justify-content: space-between;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: 350;
-    text-transform: uppercase;
-}
+    margin: 3rem 0 0;
+    z-index: 40;
+    top: 0;
+
+}*/
 
 .forside_header {
-    text-align: center;
+    /*    text-align: center;*/
+    /*    align-content: center;*/
+    justify-content: center;
+    border-bottom: none;
 }
 
 
@@ -114,8 +123,8 @@ a {
     text-align: center;
     color: white;
     font-size: 1.5em;
-    margin: auto;
-    padding-top: 18vw;
+    margin: 6vw 0 0;
+
     padding-bottom: 2vw;
 
 }
@@ -143,27 +152,12 @@ a {
 }
 
 .forside_header {
-    position: relative;
-    text-align: center;
+    overflow: hidden;
 }
 
 .forside_header h1 {
-    position: absolute;
+    margin: 0 auto;
     color: white;
-    margin-top: 0;
-    align-content: center;
-
-}
-
-.forside_nav a {
-    top: 50%;
-    display: block;
-    justify-content: space-between;
-    text-align: center;
-    margin: 3rem 0 0;
-    z-index: 40;
-    top: 0;
-
 }
 
 .forside_box1 {
@@ -182,12 +176,17 @@ a {
     text-align: center;
 }
 
+
+
+
 .forside_grid1 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-row-gap: 1em;
     margin: 0vw 15vw;
 }
+
+
 
 
 
@@ -239,49 +238,49 @@ a {
 
 /*NAV START*/
 
-.menu1 header {
+header {
     border-bottom: 1.5px solid #ACA9A7;
 }
 
-.menu1 {
+.menu {
     display: block;
     justify-content: space-between;
     text-align: center;
-    margin: 3rem 0 0;
+    /*    margin: 3rem 0 0;*/
     z-index: 40;
     top: 0;
 }
 
-.menu1 ul {
-    background: none;
-    border: none;
+.menu ul {
+    padding: 0;
 }
-
 
 
 li {
-    margin-right: 80px;
+    /*
+    margin-right: 60px;
     padding: 1rem 0;
+*/
 }
 
-.menu1 li {
-    margin-right: 50px;
+.menu li {
+    /*    margin-right: 30px;*/
     top: 0;
     list-style-type: none;
-    height: 100px;
 }
 
 
-.menu1 a {
+.menu a {
     font-size: 1.2rem;
     text-decoration: none;
     color: #9F9892;
     font-weight: 350;
     text-transform: uppercase;
+    margin: 0 50px 0 0;
 }
 
 /*Når man hover over links */
-.menu1 a:hover {
+.menu a:hover {
     font-weight: bold;
 }
 
@@ -328,7 +327,7 @@ li {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2.5rem;
-    padding: 0 10rem 0 10rem;
+    padding: 0 10rem 10rem 10rem;
 
 }
 
@@ -424,7 +423,7 @@ li {
 
 .singleview_img {
     box-sizing: border-box;
-    padding-left: 10vw;
+    padding: 5vw 0 0 10vw;
     max-width: 80%;
 
 }
@@ -533,7 +532,7 @@ li {
 }
 
 .kursus1 {
-    padding: 2vw 1vw 4vw 0;
+    padding: 2vw 1vw 0 0;
 }
 
 .kursus_fed {
@@ -551,7 +550,7 @@ li {
     transition-duration: 0.4s;
     font-family: 'Montserrat',
         sans-serif;
-    margin-top: 4vw;
+    margin: 4vw;
     text-align: center;
     display: block;
 }
@@ -691,6 +690,7 @@ footer a {
     font-family: 'Roboto';
     color: #9F9892;
     font-weight: bold;
+    top: 0;
 }
 
 /*BURGER SLUT*/
@@ -705,7 +705,7 @@ footer a {
     #menu.hidden {
         transform: translateX(0);
         display: block;
-        height: 150px;
+        /*        height: 150px;*/
         opacity: 1;
     }
 
@@ -788,6 +788,17 @@ footer a {
 
     .vision_tekst {
         margin: 0 3vw 0 2vw;
+    }
+
+    #forside_section .forside_nav a {
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.5em;
+        font-weight: 350;
+        text-transform: uppercase;
+        padding: 0 5px;
+
     }
 }
 
