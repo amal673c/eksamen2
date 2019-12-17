@@ -431,7 +431,7 @@ li {}
 
 
 .luk {
-    position: fixed;
+    position: sticky;
     display: inline-block;
     font-size: 3.4rem;
     margin-top: 60px;
@@ -452,10 +452,14 @@ li {}
     background: rgba(98, 98, 98, 0.63);
 }
 
-#popup .luk {
+#popup .luk_x {
     top: 0;
     right: 0;
     font-size: 4rem;
+    background-color: rgba(250, 235, 215, 0);
+    color: white;
+    border: none;
+    text-align: center;
 }
 
 #popup .keramik {
@@ -704,20 +708,7 @@ footer a {
 
 }
 
-/*Selve burger knappen*/
-#menuknap {
-    position: absolute;
-    left: 90%;
-    font-size: 2rem;
-    font-family: 'Roboto';
-    color: #9F9892;
-    font-weight: bold;
-    top: 0;
-}
 
-.forside_nav #menuknap {
-    color: white;
-}
 
 /*BURGER SLUT*/
 
@@ -733,11 +724,8 @@ footer a {
     }
 
     #menu.hidden {
-        /*        transform: translateX(0);*/
         display: block;
-        /*        height: 150px;*/
         opacity: 1;
-
     }
 
     #menu li {
@@ -938,6 +926,62 @@ footer a {
     }
 }
 
+@media only screen and (max-width: 600px) {
+    #menuknap {
+        position: absolute;
+        left: 90%;
+        font-size: 2rem;
+        font-family: 'Roboto';
+        color: #9F9892;
+        font-weight: bold;
+        top: 10px;
+    }
+
+    .forside_nav #menuknap {
+        color: white;
+    }
+
+    .forside_nav #menu {
+        height: 140vw;
+        background: white;
+    }
+
+    #menu {
+        height: 150vw;
+    }
+
+    #menu li {
+        line-height: 20vw;
+    }
+
+    #menu a {
+        margin: 0;
+    }
+
+    .indhold {
+        padding: 0;
+    }
+
+    #popup .keramik {
+        width: 100vw;
+        min-height: 100vh;
+    }
+
+    .parallax1 h2 {
+        font-size: 3vw;
+    }
+
+    .forside_grid1 .img1,
+    .img2,
+    .img3,
+    .img4,
+    .img5,
+    .img6,
+    .img7 {
+        display: none;
+    }
+}
+
 
 /*MEDIA QUERIES SLUT*/
 
@@ -958,8 +1002,7 @@ i {
     padding: 8px;
     position: absolute;
     left: 50%;
-
-
+    top: 239vw;
 }
 
 

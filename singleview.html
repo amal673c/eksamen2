@@ -49,7 +49,7 @@
     <section id="popup">
         <article class="keramik">
 
-            <button class="luk">X</button>
+            <button class="luk_x">X</button>
 
             <img class="my_image2" src="" alt="">
             <img class="my_image3" src="" alt="">
@@ -165,7 +165,7 @@
             console.log("visPopup");
 
             document.querySelector("#popup").style.display = "block";
-            document.querySelector("#popup .luk").addEventListener("click", skjulPopup);
+            document.querySelector("#popup .luk_x").addEventListener("click", skjulPopup);
 
             document.querySelector("#popup .my_image2").src = keramik.billede.guid;
 
@@ -178,6 +178,7 @@
             console.log("skjulPopup");
             document.querySelector("#popup").style.display = "none";
         }
+
     </script>
 </body>
 
