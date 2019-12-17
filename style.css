@@ -319,6 +319,7 @@ li {}
 .keramik_txt h2 {
     text-align: center;
     font-size: 3rem;
+    margin-bottom: 0;
 
 }
 
@@ -440,6 +441,32 @@ li {}
     color: #9F9892;
 }
 
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    display: none;
+    background: rgba(98, 98, 98, 0.63);
+}
+
+#popup .luk {
+    top: 0;
+    right: 0;
+    font-size: 4rem;
+}
+
+#popup .keramik {
+    width: 50vw;
+    min-height: 50vh;
+    margin: 4rem auto;
+    padding: 4rem;
+    background: rgba(255, 255, 255, 0);
+    border: none;
+}
+
 /*SINGLEVIEW SLUT*/
 
 /*OM START*/
@@ -507,7 +534,7 @@ li {}
 }
 
 .kursus_billed {
-    margin: 3vw 5vw 0 5vw;
+    margin: 3vw 8vw 0 5vw;
 }
 
 .kursus_tilmelding {
@@ -625,6 +652,8 @@ input[value="Send"] {
 footer {
     display: flex;
     flex-wrap: wrap;
+    flex-basis: 600;
+    flex-grow: 1;
     background-color: rgba(179, 173, 169, 0.72);
     width: 100%;
     left: 0;
@@ -635,24 +664,29 @@ footer p {
     color: white;
     padding-top: 0.5rem;
     text-align: left;
-    width: 20rem;
     margin: 20px;
+    padding-right: 4vw;
+
 }
 
 footer a {
     text-decoration: none;
     color: white;
-    padding: 1rem;
+    font-weight: 100;
+    font-size: 1em;
+
+
 }
 
 .ikoner {
-    margin: 0 0 0 10rem;
-    padding-top: 10rem;
+    margin: 10rem 0 0 10rem;
+
 
 }
 
 .fa-facebook-square:before {
     font-size: 48px;
+    padding-right: 2rem;
 }
 
 .fa-instagram:before {
@@ -687,6 +721,10 @@ footer a {
 
 /*BURGER SLUT*/
 
+
+
+
+
 /*MEDIA QUERIES START*/
 @media only screen and (min-width: 600px) {
 
@@ -704,11 +742,6 @@ footer a {
 
     #menu li {
         display: inline-block;
-    }
-
-    ul {
-
-        /*        height: 150px;*/
     }
 
     .kort {
@@ -795,71 +828,142 @@ footer a {
         padding: 0 5px;
 
     }
+
 }
 
+@media only screen and (min-width: 1200px) {
+    .cirkel_stor {
+        display: block;
+        background: #9F9892;
+        border-radius: 50%;
+        height: 140px;
+        width: 140px;
+        position: absolute;
+        -webkit-animation: mymove1 10s;
+        /* Safari 4.0 - 8.0 */
+        -webkit-animation-fill-mode: forwards;
+        /* Safari 4.0 - 8.0 */
+        animation-fill-mode: forwards;
+        margin: 3vw 3vw 3vw 83vw;
+    }
 
+    .cirkel_mellem {
+        display: block;
+        background: #9F9892;
+        border-radius: 50%;
+        height: 110px;
+        width: 110px;
+        position: absolute;
+        -webkit-animation: mymove2 7s;
+        /* Safari 4.0 - 8.0 */
+        -webkit-animation-fill-mode: forwards;
+        /* Safari 4.0 - 8.0 */
+        animation-fill-mode: forwards;
+        margin: 1vw 3vw 3vw 84vw;
+    }
+
+    .cirkel_lille {
+        display: block;
+        background: #9F9892;
+        border-radius: 50%;
+        height: 80px;
+        width: 80px;
+        position: absolute;
+        -webkit-animation: mymove 5s;
+        /* Safari 4.0 - 8.0 */
+        -webkit-animation-fill-mode: forwards;
+        /* Safari 4.0 - 8.0 */
+        animation-fill-mode: forwards;
+        margin: 1vw 3vw 3vw 85vw;
+    }
+
+    @-webkit-keyframes mymove1 {
+        from {
+            top: -20vw;
+        }
+
+        to {
+            top: 15vw;
+        }
+    }
+
+    @keyframes mymove1 {
+        from {
+            top: -20vw;
+        }
+
+        to {
+            top: 15vw;
+        }
+    }
+
+    @-webkit-keyframes mymove2 {
+        from {
+            top: -20vw;
+        }
+
+        to {
+            top: 30vw;
+        }
+    }
+
+    @keyframes mymove2 {
+        from {
+            top: -20vw;
+        }
+
+        to {
+            top: 30vw;
+        }
+    }
+
+    @-webkit-keyframes mymove {
+        from {
+            top: -20vw;
+        }
+
+        to {
+            top: 40vw;
+        }
+    }
+
+    @keyframes mymove {
+        from {
+            top: -20vw;
+        }
+
+        to {
+            top: 40vw;
+        }
+    }
+}
 
 
 /*MEDIA QUERIES SLUT*/
 
+
+
+
+
+
+
+
+
 /*TEST*/
 
-#popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: scroll;
-    display: none;
-    background: rgba(98, 98, 98, 0.63);
-}
-
-#popup .luk {
-    top: 0;
-    right: 0;
-    font-size: 4rem;
-}
-
-#popup .keramik {
-    width: 50vw;
-    min-height: 50vh;
-    margin: 4rem auto;
-    padding: 4rem;
-    background: white;
-}
-
-
-
-
-/*
-.arrow down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    font-size: 3rem;
-
-}
-
 i {
-    position: absolute;
-    top: 40vw;
-    left: 48%;
-    background-color: transparent;
     border: solid white;
     border-width: 0 3px 3px 0;
     display: inline-block;
-    padding: 15px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+    padding: 8px;
+    position: absolute;
+    left: 50%;
+
+
 }
 
-#footer_scroll a {
-    background: #4679BD;
-    border-radius: 50%;
-    display: block;
-    height: 80px;
-    width: 80px;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
 }
-*/
