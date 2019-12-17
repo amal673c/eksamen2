@@ -398,7 +398,7 @@ li {}
 .singleview_indhold {
     display: block;
     box-sizing: border-box;
-    margin-left: 5vw;
+    /*    margin-left: 5vw;*/
     margin-top: 100px;
 
 }
@@ -430,13 +430,14 @@ li {}
 
 
 .luk {
+    position: fixed;
     display: inline-block;
     font-size: 3.4rem;
-    position: fixed;
     margin-top: 60px;
     font-weight: 200;
     border: 0;
     cursor: pointer;
+    color: #9F9892;
 }
 
 /*SINGLEVIEW SLUT*/
@@ -800,3 +801,65 @@ footer a {
 
 
 /*MEDIA QUERIES SLUT*/
+
+/*TEST*/
+
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    display: none;
+    background: rgba(98, 98, 98, 0.63);
+}
+
+#popup .luk {
+    top: 0;
+    right: 0;
+    font-size: 4rem;
+}
+
+#popup .keramik {
+    width: 50vw;
+    min-height: 50vh;
+    margin: 4rem auto;
+    padding: 4rem;
+    background: white;
+}
+
+
+
+
+/*
+.arrow down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    font-size: 3rem;
+
+}
+
+i {
+    position: absolute;
+    top: 40vw;
+    left: 48%;
+    background-color: transparent;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 15px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+#footer_scroll a {
+    background: #4679BD;
+    border-radius: 50%;
+    display: block;
+    height: 80px;
+    width: 80px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+*/

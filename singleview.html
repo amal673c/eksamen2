@@ -18,11 +18,9 @@
     </header>
 
     <section>
-
         <button class="luk">←</button>
 
         <article class="singleview_side">
-
             <div class="singleview_img">
                 <img class="my_image" src="" alt="">
             </div>
@@ -33,11 +31,10 @@
                 <p class="ml"></p>
                 <p class="materiale"></p>
                 <p class="pris"></p>
-                <!--                <p class="beskrivelse"></p>-->
                 <p class="tekst"></p>
             </div>
         </article>
-
+        <!--INDHOLD TIL SINGLEVIEW-->
         <div class="singleview_img2">
             <img class="my_image2" src="" alt="">
             <img class="my_image3" src="" alt="">
@@ -45,6 +42,19 @@
 
     </section>
 
+
+
+    <!--  INDHOLD TIL POPUP-->
+    <section id="popup">
+        <article class="keramik">
+
+            <button class="luk">X</button>
+
+            <img class="my_image2" src="" alt="">
+            <img class="my_image3" src="" alt="">
+
+        </article>
+    </section>
 
     <footer></footer>
 
@@ -61,6 +71,10 @@
             hentJson();
             loadMenu();
             loadFooter();
+
+            document.querySelector("#popup").style.display = "none";
+            skjulPopup();
+
 
         }
 
@@ -113,6 +127,10 @@
 
             console.log("keramik billede guid", keramik.billede.guid)
 
+
+            document.querySelector(".my_image2").addEventListener("click", visPopup);
+            document.querySelector(".my_image3").addEventListener("click", visPopup);
+
         }
 
         function toggleMenu() {
@@ -139,6 +157,27 @@
             document.querySelector("footer").innerHTML = e;
 
         }
+
+
+
+        function visPopup() {
+            console.log("visPopup");
+
+            document.querySelector("#popup").style.display = "block";
+            document.querySelector("#popup .luk").addEventListener("click", skjulPopup);
+
+            document.querySelector("#popup .my_image2").src = keramik.billede.guid;
+            document.querySelector("#popup .my_image3").src = keramik.billede.guid;
+
+
+        }
+
+
+        function skjulPopup() {
+            console.log("skjulPopup");
+            document.querySelector("#popup").style.display = "none";
+        }
+
     </script>
 </body>
 
