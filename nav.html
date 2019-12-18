@@ -2,7 +2,7 @@
     <div id="menuknap">☰</div>
     <div id="menu" class="hidden">
         <ul>
-            <li><a href="index.html">Hjem</a></li>
+            <li><a href="index.html" class="valgt">Hjem</a></li>
             <li><a href="keramik.html">Keramik</a></li>
             <li><a href="om.html">Om Line</a></li>
             <li><a href="kursus.html">Kursus</a></li>
@@ -10,3 +10,14 @@
         </ul>
     </div>
 </nav>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", Valgt);
+
+    function Valgt() {
+        document.querySelector(".valgt").classList.remove("valgt"); //fjern klassen valgt fra aktuel knap
+        this.classList.add("valgt");
+    }
+
+</script>

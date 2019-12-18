@@ -2,7 +2,7 @@
 *,
 html * {
     box-sizing: border-box;
-    scroll-behavior: smooth;
+    /*    scroll-behavior: smooth;*/
 }
 
 img {
@@ -21,7 +21,7 @@ h1 {
     font-family: 'GFS Didot', serif;
     color: #9F9892;
     font-weight: 540;
-    font-size: 3.5em;
+    font-size: 4vw;
     text-align: center;
     margin: 0 auto;
 
@@ -137,7 +137,7 @@ a {
 .forside_header h1 {
     margin: 0 auto;
     color: white;
-    font-size: 5vw;
+    font-size: 4vw;
 }
 
 .parallax1 h2 {
@@ -180,6 +180,12 @@ a {
 }
 
 .instagram {
+    padding: 10px;
+}
+
+.img5,
+.img6,
+.img7 {
     padding: 10px;
 }
 
@@ -482,22 +488,36 @@ li {}
     text-align: center;
 }
 
-#om_container {
+.om_grid {
     display: grid;
-    grid-template-columns: 500px, 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     column-gap: 10px;
     grid-row-gap: 1em;
-    margin: 5vw;
-
+    margin: auto;
 }
 
-#line_video {
+.om_billed1 {
+    margin: 2vw 5vw 0 15vw;
+}
+
+.om_bio {
+    margin: 0 20vw 10vw 2vw;
+}
+
+.om_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    margin: 0 10vw 0;
+}
+
+*/ #line_video {
     position: relative;
     padding-bottom: 56.25%;
     /* 16:9 */
     height: 0;
-    margin: 0 20vw 5vw 6vw;
-
+    margin: 0 20vw 30vw 20vw;
 }
 
 #video {
@@ -506,7 +526,7 @@ li {}
     left: 10;
     width: 100%;
     height: 100%;
-    max-width: 540px;
+    max-width: 440px;
     max-height: 300px;
 }
 
@@ -786,22 +806,6 @@ footer a {
 
 @media only screen and (min-width: 600px) {
 
-    #om_container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-        column-gap: 10px;
-        grid-row-gap: 1em;
-        margin: 0;
-    }
-
-    .om_billed1 {
-        margin: 2vw 0 0 18vw;
-    }
-
-    .om_bio {
-        margin: 0 20vw 5vw 6vw;
-    }
-
     .vision_tekst {
         margin: 0 3vw 0 2vw;
     }
@@ -822,7 +826,8 @@ footer a {
 @media only screen and (min-width: 1200px) {
     .cirkel_stor {
         display: block;
-        background: #9F9892;
+        /*        background: #9F9892;*/
+        background: #b49c9a;
         border-radius: 50%;
         height: 140px;
         width: 140px;
@@ -837,7 +842,8 @@ footer a {
 
     .cirkel_mellem {
         display: block;
-        background: #9F9892;
+        /*        background: #9F9892;*/
+        background: #b49c9a;
         border-radius: 50%;
         height: 110px;
         width: 110px;
@@ -852,7 +858,8 @@ footer a {
 
     .cirkel_lille {
         display: block;
-        background: #9F9892;
+        /*        background: #9F9892;*/
+        background: #b49c9a;
         border-radius: 50%;
         height: 80px;
         width: 80px;
@@ -926,6 +933,7 @@ footer a {
     }
 }
 
+
 @media only screen and (max-width: 600px) {
     #menuknap {
         position: absolute;
@@ -980,33 +988,47 @@ footer a {
     .img7 {
         display: none;
     }
+
+    h1,
+    forside_header h1 {
+        font-size: 10vw;
+    }
+
+
+
+    .om_billed1 {
+        margin: 2vw 10vw 0 10vw;
+    }
+
+    .om_bio {
+        margin: 2vw 10vw 0 10vw;
+    }
 }
 
 
 /*MEDIA QUERIES SLUT*/
-
-
-
-
-
-
-
-
-
-/*TEST*/
 
 i {
     border: solid white;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 8px;
-    position: absolute;
-    left: 50%;
-    top: 239vw;
+    position: sticky;
+    left: 90%;
+    top: 242vw;
 }
 
 
 .up {
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
+}
+
+.logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 8vw;
+    width: 8vw;
+    top: 0.5vw;
 }
