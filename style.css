@@ -422,7 +422,7 @@ li {}
     display: block;
     box-sizing: border-box;
     /*    margin-left: 5vw;*/
-/*    margin-top: 100px;*/
+    /*  */
 
 }
 
@@ -650,8 +650,12 @@ li {}
 
 /*KONTAKT START*/
 .kontakt_overskrift h2 {
+    color: #9F9892;
+    font-weight: 540;
+    font-family: 'Roboto',
+        sans-serif;
+    font-size: 3em;
     text-align: center;
-    font-size: 2.2em;
 }
 
 .kontakt_side {
@@ -864,13 +868,12 @@ footer a {
 
 @media only screen and (min-width:1400px) {
     i {
-        position: absolute;
-        top: 241vw;
-        right: 5vw;
+
         border: solid white;
         border-width: 0 8px 8px 0;
         display: inline-block;
         padding: 15px;
+        margin: 2vw;
 
     }
 
@@ -896,9 +899,7 @@ footer a {
         width: 140px;
         position: absolute;
         -webkit-animation: mymove1 10s;
-        /* Safari 4.0 - 8.0 */
         -webkit-animation-fill-mode: forwards;
-        /* Safari 4.0 - 8.0 */
         animation-fill-mode: forwards;
         margin: 3vw 3vw 3vw 83vw;
     }
@@ -912,9 +913,9 @@ footer a {
         width: 110px;
         position: absolute;
         -webkit-animation: mymove2 7s;
-        /* Safari 4.0 - 8.0 */
+
         -webkit-animation-fill-mode: forwards;
-        /* Safari 4.0 - 8.0 */
+
         animation-fill-mode: forwards;
         margin: 1vw 3vw 3vw 84vw;
     }
@@ -928,9 +929,9 @@ footer a {
         width: 80px;
         position: absolute;
         -webkit-animation: mymove 5s;
-        /* Safari 4.0 - 8.0 */
+
         -webkit-animation-fill-mode: forwards;
-        /* Safari 4.0 - 8.0 */
+
         animation-fill-mode: forwards;
         margin: 1vw 3vw 3vw 85vw;
     }
@@ -1066,6 +1067,10 @@ footer a {
 
     .om_bio {
         margin: 2vw 10vw 0 10vw;
+    }
+
+    footer p {
+        margin: 3vw 15vw;
     }
 }
 
