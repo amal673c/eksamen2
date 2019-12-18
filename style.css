@@ -2,7 +2,7 @@
 *,
 html * {
     box-sizing: border-box;
-    /*    scroll-behavior: smooth;*/
+    scroll-behavior: smooth;
 }
 
 img {
@@ -72,7 +72,23 @@ a {
     list-style-type: none;
 }
 
+.logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 8vw;
+    width: 8vw;
+    top: 0.5vw;
+}
+
+
 /*FORSIDE START*/
+
+#forside_section .logo {
+    top: 14vw;
+    left: 45%;
+}
+
 
 #forside_section img {
     /*    padding: 30px;*/
@@ -137,7 +153,7 @@ a {
 .forside_header h1 {
     margin: 0 auto;
     color: white;
-    font-size: 4vw;
+    font-size: 6vw;
 }
 
 .parallax1 h2 {
@@ -397,7 +413,7 @@ li {}
 
 .singleview_img {
     box-sizing: border-box;
-    padding: 5vw 0 0 10vw;
+    padding: 0 0 0 10vw;
     max-width: 80%;
 
 }
@@ -406,7 +422,7 @@ li {}
     display: block;
     box-sizing: border-box;
     /*    margin-left: 5vw;*/
-    margin-top: 100px;
+/*    margin-top: 100px;*/
 
 }
 
@@ -444,6 +460,29 @@ li {}
     font-weight: 200;
     border: 0;
     cursor: pointer;
+    color: #9F9892;
+}
+
+.singleview_kurv {
+    background-color: #9F9892;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    margin: 8px 2px;
+    align-content: center;
+    font-family: 'Montserrat',
+        sans-serif;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.singleview_kurv:hover {
+    background-color: white;
+    border: 2px solid #9F9892;
     color: #9F9892;
 }
 
@@ -662,6 +701,7 @@ input.wpcf7-form-control.wpcf7-submit {
     background-color: #9F9892;
     padding: 4px 105px;
     text-decoration-color: white;
+    cursor: pointer;
 }
 
 input[value="Send"] {
@@ -732,15 +772,12 @@ footer a {
 
 /*BURGER SLUT*/
 
-
-
-
-
 /*MEDIA QUERIES START*/
 @media only screen and (min-width: 600px) {
 
     #menuknap {
         display: none;
+
     }
 
     #menu.hidden {
@@ -821,6 +858,32 @@ footer a {
 
     }
 
+
+
+}
+
+@media only screen and (min-width:1400px) {
+    i {
+        position: absolute;
+        top: 241vw;
+        right: 5vw;
+        border: solid white;
+        border-width: 0 8px 8px 0;
+        display: inline-block;
+        padding: 15px;
+
+    }
+
+
+    .up {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+
+    i:hover {
+        opacity: 0.7;
+        transition: .3s ease-in-out;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -931,6 +994,8 @@ footer a {
             top: 40vw;
         }
     }
+
+
 }
 
 
@@ -943,6 +1008,7 @@ footer a {
         color: #9F9892;
         font-weight: bold;
         top: 10px;
+        cursor: pointer;
     }
 
     .forside_nav #menuknap {
@@ -994,8 +1060,6 @@ footer a {
         font-size: 10vw;
     }
 
-
-
     .om_billed1 {
         margin: 2vw 10vw 0 10vw;
     }
@@ -1007,28 +1071,3 @@ footer a {
 
 
 /*MEDIA QUERIES SLUT*/
-
-i {
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 8px;
-    position: sticky;
-    left: 90%;
-    top: 242vw;
-}
-
-
-.up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-}
-
-.logo {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    height: 8vw;
-    width: 8vw;
-    top: 0.5vw;
-}
