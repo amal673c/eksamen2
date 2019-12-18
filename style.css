@@ -777,11 +777,10 @@ footer a {
 /*BURGER SLUT*/
 
 /*MEDIA QUERIES START*/
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 850px) {
 
     #menuknap {
         display: none;
-
     }
 
     #menu.hidden {
@@ -793,8 +792,14 @@ footer a {
         display: inline-block;
     }
 
-    .kort {
-        margin: 0 15vw 0 5vw;
+    #forside_section .forside_nav a {
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.5em;
+        font-weight: 350;
+        text-transform: uppercase;
+        padding: 0 5px;
     }
 }
 
@@ -841,7 +846,9 @@ footer a {
         object-fit: cover;
     }
 
-
+    .kort {
+        margin: 0 15vw 0 5vw;
+    }
 
 }
 
@@ -849,17 +856,6 @@ footer a {
 
     .vision_tekst {
         margin: 0 3vw 0 2vw;
-    }
-
-    #forside_section .forside_nav a {
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        font-size: 1.5em;
-        font-weight: 350;
-        text-transform: uppercase;
-        padding: 0 5px;
-
     }
 
 
@@ -999,8 +995,16 @@ footer a {
 
 }
 
+@media only screen and (max-width: 850px) {
+    .logo {
+        top: 2vw;
+    }
 
-@media only screen and (max-width: 600px) {
+    #forside_section .logo {
+        top: 10vw;
+        left: 45%;
+    }
+
     #menuknap {
         position: absolute;
         left: 90%;
@@ -1008,7 +1012,7 @@ footer a {
         font-family: 'Roboto';
         color: #9F9892;
         font-weight: bold;
-        top: 10px;
+        top: 12px;
         cursor: pointer;
     }
 
@@ -1026,12 +1030,23 @@ footer a {
     }
 
     #menu li {
-        line-height: 20vw;
+        line-height: 15vw;
     }
 
     #menu a {
         margin: 0;
     }
+
+    h1,
+    forside_header h1 {
+        font-size: 10vw;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 600px) {
 
     .indhold {
         padding: 0;
@@ -1056,11 +1071,6 @@ footer a {
         display: none;
     }
 
-    h1,
-    forside_header h1 {
-        font-size: 10vw;
-    }
-
     .om_billed1 {
         margin: 2vw 10vw 0 10vw;
     }
@@ -1074,5 +1084,7 @@ footer a {
     }
 }
 
+
+/*MEDIA QUERIES SLUT*/
 
 /*MEDIA QUERIES SLUT*/

@@ -39,27 +39,27 @@
 
 
         function toggleMenu() {
-            console.log("toggleMenu");
-            document.querySelector("#menu").classList.toggle("hidden");
+                       console.log("toggleMenu");
+                       document.querySelector("#menu").classList.toggle("hidden");
 
-            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+                       let erSkjult = document.querySelector("#menu").classList.contains("hidden");
 
-            if (erSkjult == true) {
-                document.querySelector("#menuknap").textContent = "☰";
-            } else {
-                document.querySelector("#menuknap").textContent = "X";
-            }
-        }
+                       if (erSkjult == true) {
+                           document.querySelector("#menuknap").textContent = "☰";
+                       } else {
+                           document.querySelector("#menuknap").textContent = "X";
+                       }
+                   }
 
-        async function loadFooter() {
-            let data = await fetch("footer.html");
-            let footer = await data.text();
-            console.log("loadFooter", footer);
-            opretFooter(footer);
-        }
+                   async function loadFooter() {
+                       let data = await fetch("footer.html");
+                       let footer = await data.text();
+                       console.log("loadFooter", footer);
+                       opretFooter(footer);
+                   }
 
 
-        function opretFooter(e) {
-            document.querySelector("footer").innerHTML = e;
+                   function opretFooter(e) {
+                       document.querySelector("footer").innerHTML = e;
 
-        }
+                   }
