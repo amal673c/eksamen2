@@ -30,8 +30,7 @@ h1 {
 h2 {
     color: #9F9892;
     font-weight: 540;
-    font-family: 'Roboto',
-        sans-serif;
+    font-family: 'Baskervville', serif;
     font-size: 3em;
 }
 
@@ -653,8 +652,7 @@ li {}
 .kontakt_overskrift h2 {
     color: #9F9892;
     font-weight: 540;
-    font-family: 'Roboto',
-        sans-serif;
+    font-family: 'Baskervville', serif;
     font-size: 3em;
     text-align: center;
 }

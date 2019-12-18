@@ -17,13 +17,15 @@
 
 
         function filtrerAlleData() {
-            filter = this.dataset.keramik; //sæt variabel "filter" til aktuel værdi
-            document.querySelector(".valgt").classList.remove("valgt"); //fjern klassen valgt fra aktuel knap
+            filter = this.dataset.keramik;
+            document.querySelector(".valgt").classList.remove("valgt");
             this.classList.add("valgt");
 
             visIndhold();
 
         }
+
+
 
 
         async function hentJson() {
@@ -53,30 +55,31 @@
 
 
         function visIndhold() {
-            //her tømmer vi array'et så filteringen ikke kommer oveni i hinanden.
+
             dest.textContent = "";
 
 
             indhold.forEach(keramik => {
                 if (filter == "alle" || keramik.kategori == filter) {
-                    console.log("kategori", keramik.kategori)
+//                    console.log("kategori", keramik.kategori)
+
                     const klon = document.querySelector("template").cloneNode(true).content;
-                    //fortæller vores content hvordan det skal fordeles i forhold til vores template
-                    //                   klon.querySelector("h2").textContent = keramik.titel;
-                    // klon.querySelector(".pris").textContent = keramik.pris;
+
 
                     klon.querySelector("img").src = keramik.billede.guid;
-                    //fortæller hvilket indhold der skal være på vores side
+
                     dest.appendChild(klon);
                     dest.lastElementChild.addEventListener("click", () => {
                         location.href = `singleview.html?id=${keramik.id}`;
-                        //siger til vores side, at den skal klikke ind på detaljesiden (link), når man trykker på et billede
+
                     })
                 }
 
             })
 
         }
+
+
 
         function toggleMenu() {
             console.log("toggleMenu");
