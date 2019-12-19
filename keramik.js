@@ -10,7 +10,6 @@
             loadFooter();
 
             const filterKnapper = document.querySelectorAll("nav button");
-
             filterKnapper.forEach(knap => knap.addEventListener("click", filtrerAlleData));
         }
 
@@ -27,13 +26,11 @@
 
 
 
-
         async function hentJson() {
             const url = "http://amalieravn.dk/kea/2-sem/eksamen/wordpress/wp-json/wp/v2/keramik?per_page=100";
 
             let myJson = await fetch(url);
             indhold = await myJson.json();
-            console.log(indhold);
 
             visIndhold();
         }
@@ -61,7 +58,7 @@
 
             indhold.forEach(keramik => {
                 if (filter == "alle" || keramik.kategori == filter) {
-//                    console.log("kategori", keramik.kategori)
+                    //                    console.log("kategori", keramik.kategori)
 
                     const klon = document.querySelector("template").cloneNode(true).content;
 
